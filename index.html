@@ -125,12 +125,17 @@
 
             /* 무한 루프 이미지 슬라이더 */
             .marquee-section {
-                height: auto;
-                min-height: 200px;
-                scroll-snap-align: none;
+                height: 100vh;
+                min-height: 100vh;
+                scroll-snap-align: start;
                 background: #f5f0e8;
-                padding: 30px 0;
+                padding: 0;
                 overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: relative;
             }
 
             .marquee-container {
@@ -166,10 +171,13 @@
             /* 푸터 */
             .footer {
                 text-align: center;
-                padding: 30px 20px;
+                padding: 20px;
                 font-size: 12px;
                 color: #8b7355;
-                background: #f5f0e8;
+                position: absolute;
+                bottom: 20px;
+                left: 0;
+                right: 0;
             }
 
             /* 반응형 - 모바일 */
@@ -217,13 +225,21 @@
 
                 /* 마키 모바일 */
                 .marquee-section {
-                    min-height: 120px;
-                    padding: 20px 0;
+                    height: auto;
+                    min-height: 200px;
+                    padding: 40px 0 60px 0;
+                    scroll-snap-align: none;
                 }
 
                 .marquee-track img {
-                    height: 100px;
+                    height: 80px;
                     margin: 0 10px;
+                }
+
+                .footer {
+                    position: relative;
+                    bottom: auto;
+                    padding: 15px;
                 }
             }
 
@@ -345,9 +361,10 @@
                     <img src="images/6.png" alt="6" />
                 </div>
             </div>
+            <footer class="footer">
+                © 2024 강소라약국. All rights reserved.
+            </footer>
         </div>
-
-        <footer class="footer">© 2024 강소라약국. All rights reserved.</footer>
 
         <script>
             const sections = document.querySelectorAll("section");
